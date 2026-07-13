@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retail Demo App — Wireframe</title>
+  <link rel="stylesheet" href="css/wireframe.css" />
+</head>
+<body>
+  <!-- Persistent top bar -->
+  <div class="topbar">
+    <a class="home-link" href="index.html">‹ All flows</a>
+    <span class="title">Retail Demo App</span>
+    <span class="frame-id" id="frameId"></span>
+    <span class="spacer"></span>
+    <button class="flow-btn" id="flowBtn">Flow ▾</button>
+  </div>
+
+  <div class="stage">
+    <!-- TABLET FRAME -->
+    <div class="tablet" role="group" aria-label="Tablet device frame">
+      <div class="bezel-cam"></div>
+      <div class="device-screen">
+
+        <!-- ========== RT-01 SPLASH ========== -->
+        <section class="screen" id="rt-splash" data-start data-code="RT-01" data-label="Splash Screen">
+          <span class="frame-badge">RT-01 · Splash</span>
+          <div class="rt" style="align-items:center;justify-content:center;text-align:center;">
+            <div class="rt-body" style="align-items:center;justify-content:center;">
+              <div class="ph" style="width:220px;height:70px;margin-bottom:26px;"><span>ASUS logo</span></div>
+              <div class="wf-label" id="splashStatus">Loading…</div>
+              <div class="ph" style="width:180px;height:6px;margin-top:14px;border-radius:20px;"><span></span></div>
+              <button class="btn ghost small" style="margin-top:28px;" onclick="showScreen('rt-sku')">Skip intro ›</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== RT-02 AUTO SKU DETECTION ========== -->
+        <section class="screen" id="rt-sku" data-code="RT-02" data-label="Auto SKU Detection">
+          <span class="frame-badge">RT-02 · Auto SKU Detection</span>
+          <div class="rt" style="align-items:center;justify-content:center;text-align:center;">
+            <div class="rt-body" style="align-items:center;justify-content:center;max-width:420px;margin:0 auto;">
+              <div class="wf-label">Detecting device</div>
+              <div class="ph" style="width:120px;height:120px;margin:18px 0;"><span>Device</span></div>
+              <div class="wf-h2" id="skuStatus">Scanning hardware ID…</div>
+              <div class="small muted" style="margin-top:8px;">SKU is read automatically from the unit — no staff input.</div>
+              <div id="skuResult" style="display:none;margin-top:22px;">
+                <div class="panel" style="display:inline-block;padding:12px 22px;">
+                  <span class="wf-label">Detected SKU</span>
+                  <div class="wf-h1" style="font-size:30px;">CX3402</div>
+                </div>
+                <div style="margin-top:22px;">
+                  <button class="btn primary" onclick="showScreen('rt-home')">Continue to demo ›</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== RT-03 HOME ========== -->
+        <section class="screen" id="rt-home" data-code="RT-03" data-label="Home Screen">
+          <span class="frame-badge">RT-03 · Home</span>
+          <div class="rt">
+            <div class="rt-body" style="flex-direction:row;gap:34px;align-items:center;">
+              <div class="ph" style="flex:1.2;height:78%;min-height:220px;"><span>Product hero image</span></div>
+              <div style="flex:1;">
+                <div class="wf-label">ASUS · CX3402</div>
+                <h1 class="wf-h1" style="margin:6px 0 14px;">Product Name</h1>
+                <div class="stack" style="max-width:280px;margin-bottom:24px;">
+                  <div class="line w-90"></div>
+                  <div class="line w-75"></div>
+                  <div class="line w-60"></div>
+                </div>
+                <button class="btn primary" style="font-size:16px;padding:12px 24px;" onclick="showScreen('rt-ksp')">Explore ›</button>
+              </div>
+            </div>
+            <div class="rt-nav">
+              <button class="btn ghost" onclick="showScreen('rt-sku')">‹ Back</button>
+              <div class="spacer"></div>
+              <span class="small muted">Idle timeout returns to attract loop</span>
+              <button class="btn ghost small" onclick="showScreen('rt-idle')">Preview idle →</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== RT-04 PRODUCT KSP ========== -->
+        <section class="screen" id="rt-ksp" data-code="RT-04" data-label="Product KSP">
+          <span class="frame-badge">RT-04 · Key Selling Points</span>
+          <div class="rt">
+            <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:6px;">
+              <h2 class="wf-h2">Key Selling Points</h2>
+              <span class="small muted" id="kspCount"></span>
+            </div>
+            <div class="rt-body" style="flex-direction:row;align-items:center;gap:16px;">
+              <button class="arrow-btn" onclick="kspStep(-1)" aria-label="Previous">‹</button>
+              <div class="panel" style="flex:1;display:flex;gap:22px;align-items:center;min-height:200px;">
+                <div class="ph" style="width:150px;height:150px;flex:none;"><span>KSP visual</span></div>
+                <div style="flex:1;">
+                  <div class="wf-label">Highlight</div>
+                  <h2 class="wf-h1" id="kspTitle" style="font-size:24px;margin:6px 0 12px;">Military Grade Durability</h2>
+                  <div class="stack" style="max-width:340px;">
+                    <div class="line w-90"></div><div class="line w-75"></div>
+                  </div>
+                </div>
+              </div>
+              <button class="arrow-btn" onclick="kspStep(1)" aria-label="Next">›</button>
+            </div>
+            <div style="display:flex;justify-content:center;margin-top:12px;">
+              <div class="dots" id="kspDots"></div>
+            </div>
+            <div class="rt-nav">
+              <button class="btn ghost" onclick="showScreen('rt-home')">‹ Home</button>
+              <div class="spacer"></div>
+              <button class="btn primary" onclick="showScreen('rt-specs')">Technical specs ›</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== RT-05 SPECIFICATIONS ========== -->
+        <section class="screen" id="rt-specs" data-code="RT-05" data-label="Technical Specifications">
+          <span class="frame-badge">RT-05 · Technical Specifications</span>
+          <div class="rt">
+            <h2 class="wf-h2" style="margin-bottom:8px;">Technical Specifications</h2>
+            <div class="rt-body" style="overflow:auto;">
+              <table class="spec-table">
+                <tr><td>CPU</td><td><div class="line w-60"></div></td></tr>
+                <tr><td>RAM</td><td><div class="line w-30"></div></td></tr>
+                <tr><td>Storage</td><td><div class="line w-45"></div></td></tr>
+                <tr><td>Display</td><td><div class="line w-75"></div></td></tr>
+                <tr><td>Battery</td><td><div class="line w-45"></div></td></tr>
+                <tr><td>Connectivity</td><td><div class="line w-90"></div></td></tr>
+                <tr><td>Weight</td><td><div class="line w-30"></div></td></tr>
+                <tr><td>Dimensions</td><td><div class="line w-60"></div></td></tr>
+              </table>
+            </div>
+            <div class="rt-nav">
+              <button class="btn ghost" onclick="showScreen('rt-ksp')">‹ Selling points</button>
+              <div class="spacer"></div>
+              <button class="btn primary" onclick="showScreen('rt-media')">Media gallery ›</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== RT-06 MEDIA GALLERY ========== -->
+        <section class="screen" id="rt-media" data-code="RT-06" data-label="Media Gallery">
+          <span class="frame-badge">RT-06 · Media Gallery</span>
+          <div class="rt">
+            <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px;">
+              <h2 class="wf-h2">Media Gallery</h2>
+              <span class="small muted" id="mediaType">Image 1 of 4</span>
+            </div>
+            <div class="rt-body" style="flex-direction:row;align-items:center;gap:14px;">
+              <button class="arrow-btn" onclick="mediaStep(-1)" aria-label="Previous">‹</button>
+              <div class="ph" id="mediaStage" style="flex:1;height:78%;min-height:210px;"><span>Product image</span></div>
+              <button class="arrow-btn" onclick="mediaStep(1)" aria-label="Next">›</button>
+            </div>
+            <div style="display:flex;gap:10px;justify-content:center;margin-top:12px;" id="mediaThumbs"></div>
+            <div class="rt-nav">
+              <button class="btn ghost" onclick="showScreen('rt-specs')">‹ Specs</button>
+              <div class="spacer"></div>
+              <button class="btn ghost" onclick="showScreen('rt-home')">Restart demo</button>
+              <button class="btn primary" onclick="showScreen('rt-idle')">Enter idle mode ›</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== RT-07 IDLE STATE ========== -->
+        <section class="screen" id="rt-idle" data-code="RT-07" data-label="Idle State (Attract Loop)">
+          <span class="frame-badge">RT-07 · Idle State — attract loop</span>
+          <div class="rt" style="padding:0;cursor:pointer;" onclick="showScreen('rt-home')" title="Tap anywhere to wake">
+            <div class="rt-body" style="padding:0;">
+              <div class="ph" id="idleStage" style="flex:1;border-radius:0;border:0;">
+                <span id="idleLabel">Attract slide 1</span>
+              </div>
+            </div>
+            <div style="position:absolute;bottom:16px;left:0;right:0;text-align:center;">
+              <div class="dots" id="idleDots" style="justify-content:center;margin-bottom:8px;"></div>
+              <span class="small muted">No interaction detected · slideshow, video &amp; carousel loop continuously — tap to wake</span>
+            </div>
+          </div>
+        </section>
+
+      </div><!-- /device-screen -->
+    </div><!-- /tablet -->
+  </div><!-- /stage -->
+
+  <!-- FLOW OVERLAY -->
+  <div class="flow-overlay" id="flowOverlay">
+    <div class="flow-card">
+      <button class="close-x">Close ✕</button>
+      <h3>Retail Demo App — screen flow</h3>
+      <div class="small muted">Jump to any screen. Linear flow: Splash → SKU → Home → KSP → Specs → Media → Idle.</div>
+      <ul class="flow-list">
+        <li data-goto="rt-splash"><span class="n"></span><span class="lbl">Splash Screen</span><span class="id">RT-01</span></li>
+        <li data-goto="rt-sku"><span class="n"></span><span class="lbl">Auto SKU Detection</span><span class="id">RT-02</span></li>
+        <li data-goto="rt-home"><span class="n"></span><span class="lbl">Home Screen</span><span class="id">RT-03</span></li>
+        <li data-goto="rt-ksp"><span class="n"></span><span class="lbl">Product KSP</span><span class="id">RT-04</span></li>
+        <li data-goto="rt-specs"><span class="n"></span><span class="lbl">Technical Specifications</span><span class="id">RT-05</span></li>
+        <li data-goto="rt-media"><span class="n"></span><span class="lbl">Media Gallery</span><span class="id">RT-06</span></li>
+        <li data-goto="rt-idle"><span class="n"></span><span class="lbl">Idle State (Attract Loop)</span><span class="id">RT-07</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="js/proto.js"></script>
+  <script>
+    /* ---------- KSP carousel ---------- */
+    const ksp = ['Military Grade Durability','AI Powered Performance','All-Day Battery Life','Immersive Display','Multi-Touch Support'];
+    let kspI = 0;
+    function renderKsp() {
+      document.getElementById('kspTitle').textContent = ksp[kspI];
+      document.getElementById('kspCount').textContent = (kspI+1) + ' / ' + ksp.length;
+      const dots = ksp.map((_,i)=>`<i class="${i===kspI?'on':''}"></i>`).join('');
+      document.getElementById('kspDots').innerHTML = dots;
+    }
+    function kspStep(d){ kspI = (kspI + d + ksp.length) % ksp.length; renderKsp(); }
+    renderKsp();
+
+    /* ---------- Media gallery ---------- */
+    const media = [
+      {t:'Product image', k:'Image'},
+      {t:'Lifestyle image', k:'Image'},
+      {t:'Product video ▶', k:'Video'},
+      {t:'360° showcase', k:'Showcase'}
+    ];
+    let medI = 0;
+    function renderMedia(){
+      const m = media[medI];
+      document.querySelector('#mediaStage span').textContent = m.t;
+      document.getElementById('mediaType').textContent = m.k + ' ' + (medI+1) + ' of ' + media.length;
+      document.getElementById('mediaThumbs').innerHTML =
+        media.map((mm,i)=>`<div class="ph" style="width:64px;height:44px;${i===medI?'border-color:#555;':''}" onclick="setMedia(${i})"><span></span></div>`).join('');
+    }
+    function setMedia(i){ medI = i; renderMedia(); }
+    function mediaStep(d){ medI = (medI + d + media.length) % media.length; renderMedia(); }
+    renderMedia();
+
+    /* ---------- Idle attract loop ---------- */
+    const idleSlides = ['Attract slide — hero','Product video ▶ (auto-play)','Product carousel','Key features montage'];
+    let idleI = 0, idleTimer = null;
+    function renderIdle(){
+      document.getElementById('idleLabel').textContent = idleSlides[idleI];
+      document.getElementById('idleDots').innerHTML =
+        idleSlides.map((_,i)=>`<i class="${i===idleI?'on':''}"></i>`).join('');
+    }
+    function startIdle(){ stopIdle(); renderIdle(); idleTimer = setInterval(()=>{ idleI=(idleI+1)%idleSlides.length; renderIdle(); }, 2200); }
+    function stopIdle(){ if(idleTimer){ clearInterval(idleTimer); idleTimer=null; } }
+
+    /* ---------- Per-screen hooks ---------- */
+    window.onScreenEnter = function(id){
+      // splash auto-advances to SKU
+      if (id === 'rt-splash') {
+        setTimeout(()=>{ const s=document.getElementById('splashStatus'); if(s) s.textContent='Ready'; }, 900);
+        clearTimeout(window._splashT);
+        window._splashT = setTimeout(()=>{ if(document.querySelector('.screen.active')?.id==='rt-splash') showScreen('rt-sku'); }, 1900);
+      }
+      // SKU detection animation
+      if (id === 'rt-sku') {
+        const status = document.getElementById('skuStatus');
+        const result = document.getElementById('skuResult');
+        status.style.display=''; result.style.display='none';
+        status.textContent = 'Scanning hardware ID…';
+        clearTimeout(window._skuT);
+        window._skuT = setTimeout(()=>{
+          status.style.display='none'; result.style.display='';
+        }, 1400);
+      }
+      // idle loop control
+      if (id === 'rt-idle') { idleI = 0; startIdle(); } else { stopIdle(); }
+    };
+  </script>
+</body>
+</html>

@@ -1,68 +1,103 @@
-# ASUS Retail Demo Ecosystem — Wireframe Prototype
+# ASUS Retail Demo Ecosystem — Interactive Prototype
 
-A clickable, **low-fidelity wireframe** for scope validation. Structure-first: grey
-placeholder blocks, minimal typography, no branding. The point is to confirm
-**information architecture, screen hierarchy, and navigation** before development —
-not visual design.
+A fully clickable, **high-fidelity client-review prototype** for the ASUS Retail Demo Ecosystem. Built as a single-page interactive workbench suitable for stakeholder walkthroughs and development handoff.
 
-Two connected products:
+## What's inside
 
-| Product | Frame | Screens |
+| # | Page | Description |
 |---|---|---|
-| **Retail Demo App** | Tablet | Splash → SKU → Home → KSP → Specs → Media → Idle loop (7) |
-| **CMS Admin Portal** | Desktop | Login → Dashboard → Upload → Assign → Schedule → Reports (6) |
+| 01 | **Cover Page** | Project overview, flow entry points |
+| 02 | **Design System** | Color palette, typography, spacing rules |
+| 03 | **Retail Demo App** | Simulated landscape Chromebook/tablet experience |
+| 04 | **CMS Admin Portal** | Desktop browser-framed admin console |
+| 05 | **Prototype Flow** | Interactive SVG diagram linking both products |
+| 06 | **Components Sandbox** | Live rendering of reusable UI components |
+| 07 | **Assets Catalog** | Inventory of all media assets used |
+
+---
+
+## Products
+
+### Product 1 — Retail Demo App
+Runs on in-store ASUS Chromebooks and tablets. Customer-facing display experience.
+
+| Screen | ID | Description |
+|---|---|---|
+| Splash | RT-01 | ASUS logo + spinner → auto-advance in 3 seconds |
+| SKU Detection | RT-02 | Simulated hardware scan, 4-step log sequence, auto-detects CX3402 |
+| Home | RT-03 | Product hero image, description, 3-CTA navigation |
+| Key Selling Points | RT-04 | 6-card carousel with icons, prev/next, animated dots |
+| Tech Specs | RT-05 | 2×2 grid with real ASUS Chromebook Plus CX3402 specifications |
+| Media Gallery | RT-06 | Image viewer + simulated video player with play/pause/seek |
+| Idle Attract Mode | RT-07 | Full-bleed screensaver, 3-slide crossfade, tap-to-wake |
+
+**Idle timeout:** 15 seconds of inactivity automatically triggers attract mode.
+
+---
+
+### Product 2 — CMS Admin Portal
+Web dashboard for ASUS administrators to manage devices and content remotely.
+
+| Screen | ID | Description |
+|---|---|---|
+| Login | CMS-01 | Credentials + role picker (Super Admin / Regional Admin) |
+| Dashboard | CMS-02 | 4 metric cards, interactive map, recent uploads + sync logs |
+| Upload Content | CMS-03 | Drag-drop zones, metadata form, live asset inventory table |
+| Assign Content | CMS-04 | Multi-select filters (SKU, Region, Store) + device count estimator |
+| Scheduling | CMS-05 | Date range, recurrence settings, active schedules table |
+| Reports | CMS-06 | 8-column device audit table + CSV / Excel / PDF export |
+
+**Connected state:** Uploading an asset in CMS-03 immediately appears in dashboard tables, assignment dropdowns, and scheduling screens.
+
+---
 
 ## How to open
 
-Just **double-click `index.html`**. It runs in any browser — no install, no build step,
-no server needed. Pick a product from the landing page to step through its flow.
+**Double-click `index.html`** — runs in any modern browser. No build step, no install, no server needed.
 
-- **Back / Next** buttons behave like the real app.
-- The **Flow ▾** button (top-right of each prototype) opens a screen map — jump to any screen.
-- Interactions that work: SKU auto-detection, KSP carousel arrows, media gallery
-  prev/next + thumbnails, idle attract loop (tap to wake), CMS multi-select filter
-  chips, enable/disable toggle, role picker.
+```
+Assets auto-load from relative paths → works locally and on GitHub Pages.
+```
+
+---
 
 ## File structure
 
 ```
-asus-retail-demo-wireframe/
-├── index.html        Landing — choose a product flow
-├── retail.html       Retail Demo App  (tablet frame, RT-01…RT-07)
-├── cms.html          CMS Admin Portal (desktop frame, CMS-01…CMS-06)
+ASUS/
+├── index.html              Master workbench (all 7 pages, both products)
 ├── css/
-│   └── wireframe.css Shared low-fi wireframe kit (reused components)
+│   └── style.css           Material Design 3 design system + all component styles
 ├── js/
-│   └── proto.js      Shared screen-switching + Back history + flow overlay
+│   └── app.js              State engine, screen router, CMS logic, export utilities
+├── assets/
+│   ├── asus_chromebook_hero.png     Studio hero shot (RT-03, RT-06, CMS catalog)
+│   └── asus_attract_loop.png        Retail signage banner (RT-07 attract loop)
 └── README.md
 ```
 
-**Frame naming** follows `RT-0x` (Retail) and `CMS-0x` (CMS), shown as a badge on every
-screen and in the top bar — matches how frames would be named in Figma.
+---
 
-**Component reuse:** all screens share one stylesheet and one navigation engine
-(`.ph` placeholder, `.btn`, `.panel`, `.stat`, `.chip`, `.spec-table`, device frames,
-flow overlay). Change a component once, it updates everywhere.
+## Design System
 
-## Deploy to GitHub Pages (optional)
+| Token | Value |
+|---|---|
+| Primary (ASUS Blue) | `#00539B` |
+| Primary Hover | `#003E7E` |
+| Primary Light | `#E6EEF7` |
+| Surface Variant | `#F8F9FA` |
+| Border | `#DADCE0` |
+| Font (Headings) | Outfit 600–700 |
+| Font (Body) | Inter 400–600 |
+| Border Radius | 8px (cards), 16px (panels) |
+| Spacing Grid | 8px base unit |
 
-Because it's plain static files with **relative paths**, it works on a Pages project
-subpath with no config:
+---
+
+## Deploy to GitHub Pages
 
 ```bash
-git init
-git add .
-git commit -m "ASUS retail demo wireframe prototype"
-git branch -M main
-git remote add origin https://github.com/<you>/<repo>.git
 git push -u origin main
+# Settings → Pages → Source: main / root
+# Live at: https://<you>.github.io/<repo>/
 ```
-
-Then in the repo: **Settings → Pages → Source: `main` / root**. Your prototype will be at
-`https://<you>.github.io/<repo>/`.
-
-## Reviewer notes
-
-- Grey blocks are deliberate placeholders for imagery, video, copy, and branding.
-- This validates the **workflow**. Visual design, colours, icons, and real content come
-  after the flow is approved.

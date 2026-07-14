@@ -2,6 +2,31 @@
 // Contains state storage, navigation routing, simulation routines, and mock assets.
 
 (function() {
+
+  // ==========================================
+  // TOAST NOTIFICATION UTILITY
+  // ==========================================
+  function showToast(message, type) {
+    type = type || 'info';
+    let container = document.getElementById('toast-container');
+    if (!container) {
+      container = document.createElement('div');
+      container.id = 'toast-container';
+      container.className = 'toast-container';
+      document.body.appendChild(container);
+    }
+    const toast = document.createElement('div');
+    const icons = { success: '✅', error: '❌', info: 'ℹ️' };
+    toast.className = `toast toast-${type}`;
+    toast.innerHTML = `<span>${icons[type] || 'ℹ️'}</span> ${message}`;
+    container.appendChild(toast);
+    setTimeout(() => {
+      if (toast.parentNode) toast.parentNode.removeChild(toast);
+    }, 3400);
+  }
+
+  window.showToast = showToast;
+
   // ==========================================
   // GLOBAL STATE
   // ==========================================
@@ -580,7 +605,7 @@
 
       node.addEventListener('click', function() {
         const store = this.getAttribute('data-store');
-        alert(`Requesting ping report for unit in ${store}... Status response: 200 OK.`);
+        showToast(`Ping report requested for ${store} — Status: 200 OK`, 'success');
       });
     });
   }
@@ -608,11 +633,10 @@
       selectAll('.delete-asset-btn').forEach(btn => {
         btn.addEventListener('click', function() {
           const id = this.getAttribute('data-id');
-          if (confirm('Are you sure you want to delete this asset? This will break active assignments.')) {
-            appState.uploadedAssets = appState.uploadedAssets.filter(a => a.id !== id);
+          appState.uploadedAssets = appState.uploadedAssets.filter(a => a.id !== id);
             appState.assignments = appState.assignments.filter(a => a.assetId !== id);
+            showToast('Asset removed from catalog. Existing assignments cleared.', 'error');
             refreshList();
-          }
         });
       });
     };
@@ -755,10 +779,9 @@
     selectAll('.cancel-sched-btn').forEach(btn => {
       btn.addEventListener('click', function() {
         const index = parseInt(this.getAttribute('data-index'));
-        if (confirm('Deactivate and delete this distribution schedule?')) {
-          appState.assignments.splice(index, 1);
+        appState.assignments.splice(index, 1);
+          showToast('Schedule cancelled and removed from active timelines.', 'error');
           renderCMSScheduling();
-        }
       });
     });
   }
@@ -805,7 +828,7 @@
       const tags = select('cms-upload-tags').value.trim();
 
       if (!title) {
-        alert('Please provide an asset title.');
+        showToast('Please provide an asset title before publishing.', 'error');
         return;
       }
 
@@ -828,20 +851,20 @@
       select('cms-upload-desc').value = '';
       select('cms-upload-tags').value = '';
       
-      alert('Asset uploaded successfully and catalog updated!');
+      showToast('Asset published to catalog. Sync dispatched to target devices.', 'success');
       renderCMSUpload();
     });
 
     // Drag and drop click trigger input select
     select('cms-drag-zone-img').addEventListener('click', () => {
       select('cms-upload-type').value = 'image';
-      alert('Mock File dialog opened. Simulating selecting standard ASUS JPEG asset...');
+      showToast('Mock file selected: ASUS JPEG campaign asset ready.', 'info');
       select('cms-upload-title').value = 'Campaign Banner Spec Shot';
       select('cms-upload-tags').value = 'Promo, Winter26';
     });
     select('cms-drag-zone-vid').addEventListener('click', () => {
       select('cms-upload-type').value = 'video';
-      alert('Mock File dialog opened. Simulating selecting stress test video file (MP4)...');
+      showToast('Mock file selected: Stress test MP4 video ready for upload.', 'info');
       select('cms-upload-title').value = 'Chassis Shock Test Loop';
       select('cms-upload-tags').value = 'Video, Hardware';
     });
@@ -851,7 +874,7 @@
       e.preventDefault();
       const asset = appState.uploadedAssets.find(a => a.id === selectedAssetId);
       if (!asset) {
-        alert('Please select an asset first.');
+        showToast('Please select an asset before dispatching.', 'error');
         return;
       }
 
@@ -867,7 +890,7 @@
       };
 
       appState.assignments.push(newAssign);
-      alert('Content distribution assignments applied! Sync signal dispatched to target devices.');
+      showToast('Distribution rules saved. Sync signal dispatched to all target devices.', 'success');
       showCmsScreen('cms-dash');
     });
 
@@ -878,7 +901,7 @@
       const asset = appState.uploadedAssets.find(a => a.id === assetSelect.value);
       
       if (!asset) {
-        alert('Please select an asset first.');
+        showToast('Please select an asset to schedule.', 'error');
         return;
       }
 
@@ -895,7 +918,7 @@
       };
 
       appState.assignments.push(newAssign);
-      alert(`Schedule published for ${asset.title}! Deploying distribution timelines.`);
+      showToast(`Schedule published for "${asset.title}". Distribution timeline active.`, 'success');
       renderCMSScheduling();
     });
 

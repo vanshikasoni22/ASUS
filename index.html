@@ -1,47 +1,1198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ASUS Retail Demo Ecosystem — Wireframe Prototype</title>
-  <link rel="stylesheet" href="css/wireframe.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASUS Retail Demo Ecosystem — Client Review Prototype</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="topbar">
-    <span class="title">ASUS Retail Demo Ecosystem</span>
-    <span class="frame-id">Low-fidelity wireframe · scope validation</span>
-    <span class="spacer"></span>
+
+  <div class="workbench-shell">
+    
+    <!-- LEFT SIDEBAR: Pages index (Figma structured) -->
+    <aside class="workbench-sidebar">
+      <div class="workbench-brand">
+        <!-- SVG ASUS Logo -->
+        <svg class="asus-svg-logo" viewBox="0 0 450 78" xmlns="http://www.w3.org/2000/svg">
+          <path d="M78.6 0H63L31.5 54H15.8L47.3 0H0v77.3h31.5l31.5-54h15.7l-31.5 54H94V0H78.6zm132 0H195l-31.5 54h-15.7l31.5-54h-47.2v77.3h31.4l31.5-54h15.8l-31.5 54h47.2V0h-15.6zm132 0h-15.7l-31.5 54h-15.7l31.5-54h-47.2v77.3h31.4l31.5-54h15.8l-31.5 54H343V0h-15.7zm106.6 0h-15.6l-31.5 54h-15.7l31.5-54h-47.2v77.3h31.4l31.5-54h15.8l-31.5 54h47.2V0h-15.7z"/>
+        </svg>
+        <div class="workbench-title-box">
+          <span class="workbench-title">Retail Demo</span>
+          <span class="workbench-subtitle">Prototype Portal</span>
+        </div>
+      </div>
+      
+      <nav class="workbench-nav">
+        <a href="#" class="workbench-nav-item active" data-page="cover">
+          <span class="page-num">01</span>
+          <span class="page-name">Cover Page</span>
+        </a>
+        <a href="#" class="workbench-nav-item" data-page="ds">
+          <span class="page-num">02</span>
+          <span class="page-name">Design System</span>
+        </a>
+        <a href="#" class="workbench-nav-item" data-page="retail">
+          <span class="page-num">03</span>
+          <span class="page-name">Retail Demo App</span>
+        </a>
+        <a href="#" class="workbench-nav-item" data-page="cms">
+          <span class="page-num">04</span>
+          <span class="page-name">CMS Admin Portal</span>
+        </a>
+        <a href="#" class="workbench-nav-item" data-page="flow">
+          <span class="page-num">05</span>
+          <span class="page-name">Prototype Flow</span>
+        </a>
+        <a href="#" class="workbench-nav-item" data-page="sandbox">
+          <span class="page-num">06</span>
+          <span class="page-name">Components Sandbox</span>
+        </a>
+        <a href="#" class="workbench-nav-item" data-page="assets">
+          <span class="page-num">07</span>
+          <span class="page-name">Assets Catalog</span>
+        </a>
+        
+        <div class="workbench-nav-divider"></div>
+        
+        <div style="padding: 0 16px; font-size: 11px; color: var(--text-secondary); line-height: 1.4;">
+          <strong>Interactive MVP Walkthrough</strong><br>
+          Click through tabs to inspect features, or interact with simulators directly.
+        </div>
+      </nav>
+      
+      <div class="workbench-footer">
+        ASUS Enterprise MVP<br>
+        Version 1.0.0
+      </div>
+    </aside>
+    
+    <!-- MAIN WORK AREA -->
+    <main class="workbench-main">
+      
+      <!-- TOP NAV / STATS -->
+      <header class="workbench-header">
+        <h2 class="workbench-header-title">01  ·  Cover Page</h2>
+        <div class="workbench-header-actions">
+          <span style="font-size: 12px; color: var(--text-secondary); display: flex; align-items: center; gap: 6px;">
+            <span style="width: 8px; height: 8px; border-radius:50%; background-color: var(--success); display:inline-block;"></span>
+            Connected state database active
+          </span>
+          <button class="btn btn-secondary" onclick="window.location.reload();">
+            🔄 Reset Prototypes
+          </button>
+        </div>
+      </header>
+      
+      <!-- MAIN BODY CONTAINER -->
+      <div class="workbench-body">
+        
+        <!-- ==========================================
+             01 COVER PAGE
+             ========================================== -->
+        <section class="workbench-page active" id="page-cover">
+          <div class="cover-hero">
+            <span class="cover-kicker">ASUS Chromebook & Tablet Retail Ecosystem</span>
+            <h1 class="cover-title">Retail Demo App & CMS Admin Portal</h1>
+            <p class="cover-description">
+              A high-fidelity interactive prototype validating the customer walkthrough experience on display devices and the remote content management console used by ASUS administrators.
+            </p>
+            <div class="cover-meta">
+              <div class="cover-meta-item">
+                <div class="cover-meta-label">Client</div>
+                <div class="cover-meta-value">ASUS Retail Solutions</div>
+              </div>
+              <div class="cover-meta-item">
+                <div class="cover-meta-label">Format</div>
+                <div class="cover-meta-value">Material Design 3 (Light Theme)</div>
+              </div>
+              <div class="cover-meta-item">
+                <div class="cover-meta-label">Target Environment</div>
+                <div class="cover-meta-value">ChromeOS / Tablet Display & Desktop Web</div>
+              </div>
+            </div>
+          </div>
+          
+          <h2 style="font-family: var(--font-title); font-size: 20px; margin-bottom: 16px;">Core Workflows</h2>
+          <div class="cover-grid">
+            <div class="cover-card">
+              <h3>📱 Retail Demo Application</h3>
+              <p>Runs on in-store Chromebooks and tablets. Detects SKUs automatically, walks shoppers through specs, media, and features, and triggers an attract loop screensaver when idle.</p>
+              <button class="btn btn-primary" onclick="document.querySelector('.workbench-nav-item[data-page=\'retail\']').click();">
+                Open Simulated App ›
+              </button>
+            </div>
+            
+            <div class="cover-card">
+              <h3>💻 CMS Admin Portal</h3>
+              <p>Desktop panel for ASUS operations managers. Allows file uploads, geographic target mapping (Regions, States, Cities, Stores), display distribution schedules, and syncing logs.</p>
+              <button class="btn btn-primary" onclick="document.querySelector('.workbench-nav-item[data-page=\'cms\']').click();">
+                Open CMS Console ›
+              </button>
+            </div>
+          </div>
+        </section>
+        
+        <!-- ==========================================
+             02 DESIGN SYSTEM
+             ========================================== -->
+        <section class="workbench-page" id="page-ds">
+          <div class="alert-box alert-info">
+            <strong>Design Tokens Statement:</strong> This design system represents the corporate look-and-feel of ASUS enterprise dashboards. It emphasizes clean layouts, Inter typography, 8px spacing grid, and ASUS Blue as the dominant brand identifier.
+          </div>
+          
+          <!-- Colors -->
+          <div class="ds-section">
+            <h3 class="ds-section-title">Color Palette</h3>
+            <div class="ds-color-grid">
+              <div class="ds-color-card">
+                <div class="ds-color-swatch" style="background-color: var(--primary);"></div>
+                <div class="ds-color-info">
+                  <div class="ds-color-name">ASUS Blue (Primary)</div>
+                  <div class="ds-color-hex">#00539B</div>
+                </div>
+              </div>
+              <div class="ds-color-card">
+                <div class="ds-color-swatch" style="background-color: var(--primary-hover);"></div>
+                <div class="ds-color-info">
+                  <div class="ds-color-name">ASUS Blue Dark</div>
+                  <div class="ds-color-hex">#003E7E</div>
+                </div>
+              </div>
+              <div class="ds-color-card">
+                <div class="ds-color-swatch" style="background-color: var(--asus-blue-light);"></div>
+                <div class="ds-color-info">
+                  <div class="ds-color-name">ASUS Blue Light</div>
+                  <div class="ds-color-hex">#E6EEF7</div>
+                </div>
+              </div>
+              <div class="ds-color-card">
+                <div class="ds-color-swatch" style="background-color: var(--accent);"></div>
+                <div class="ds-color-info">
+                  <div class="ds-color-name">Accent Blue</div>
+                  <div class="ds-color-hex">#1A73E8</div>
+                </div>
+              </div>
+              <div class="ds-color-card">
+                <div class="ds-color-swatch" style="background-color: var(--surface-variant);"></div>
+                <div class="ds-color-info">
+                  <div class="ds-color-name">Surface Light Grey</div>
+                  <div class="ds-color-hex">#F8F9FA</div>
+                </div>
+              </div>
+              <div class="ds-color-card">
+                <div class="ds-color-swatch" style="background-color: var(--border);"></div>
+                <div class="ds-color-info">
+                  <div class="ds-color-name">Border Line</div>
+                  <div class="ds-color-hex">#DADCE0</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Typography -->
+          <div class="ds-section">
+            <h3 class="ds-section-title">Typography (Inter & Outfit)</h3>
+            <div class="ds-font-sample">
+              <div class="ds-font-label">Display Heading - Outfit (700 Bold)</div>
+              <div style="font-family: var(--font-title); font-size: 32px; font-weight: 700;">ASUS Chromebook Plus CX3402</div>
+            </div>
+            <div class="ds-font-sample">
+              <div class="ds-font-label">Section Title - Outfit (600 Semi-Bold)</div>
+              <div style="font-family: var(--font-title); font-size: 20px; font-weight: 600;">Technical Specifications</div>
+            </div>
+            <div class="ds-font-sample">
+              <div class="ds-font-label">Body Text - Inter (400 Regular)</div>
+              <div style="font-family: var(--font-sans); font-size: 14px; line-height: 1.6; color: var(--text-secondary);">
+                Tested to rigorous US MIL-STD 810H standards to withstand everyday bumps, drops, and liquid spills.
+              </div>
+            </div>
+            <div class="ds-font-sample">
+              <div class="ds-font-label">Action Label / Code - Inter (500 Medium / Monospace)</div>
+              <div style="font-family: var(--font-sans); font-size: 13px; font-weight: 500; color: var(--primary);">EXPLORE PRODUCT</div>
+            </div>
+          </div>
+          
+          <!-- Elev/Margins -->
+          <div class="ds-section">
+            <h3 class="ds-section-title">Design Guidelines</h3>
+            <div class="ds-color-grid">
+              <div class="ds-card">
+                <strong style="font-size:14px; display:block; margin-bottom:8px;">8-Point Grid</strong>
+                <p style="font-size:12px; color:var(--text-secondary); line-height: 1.5;">All paddings, margins, elevations, and layout heights align to sizes of 8px (8, 16, 24, 32, 48, 64).</p>
+              </div>
+              <div class="ds-card">
+                <strong style="font-size:14px; display:block; margin-bottom:8px;">Rounded Corners</strong>
+                <p style="font-size:12px; color:var(--text-secondary); line-height: 1.5;">Cards, inputs, dialog panels, and buttons use a consistent border radius of 8px. Outer chassis uses 16px.</p>
+              </div>
+              <div class="ds-card">
+                <strong style="font-size:14px; display:block; margin-bottom:8px;">Flat Shadow Scale</strong>
+                <p style="font-size:12px; color:var(--text-secondary); line-height: 1.5;">Clean elevation gradients matching Material Design 3. Low height shadows to create neat card separation.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- ==========================================
+             03 RETAIL DEMO APP (LANDSCAPE SIMULATOR)
+             ========================================== -->
+        <section class="workbench-page" id="page-retail">
+          <div style="margin-bottom: 20px; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <p style="font-size: 14px; color: var(--text-secondary); max-width: 600px;">
+                Walk through the in-store Chromebook flow. Note the automatic SKU scanning simulation and the screensaver attract loop.
+              </p>
+            </div>
+            <div style="display:flex; gap:10px;">
+              <button class="btn btn-secondary" onclick="showRtScreen('rt-splash')">⏮ Restart Loop</button>
+              <button class="btn btn-secondary" onclick="showRtScreen('rt-idle')">💤 Trigger Idle Mode</button>
+            </div>
+          </div>
+          
+          <div class="simulator-stage">
+            
+            <!-- TABLET FRAME -->
+            <div class="tablet-frame">
+              <div class="tablet-camera"></div>
+              
+              <!-- Simulated Landscape Screen -->
+              <div class="tablet-screen" id="tablet-viewport">
+                
+                <!-- RT-01: Splash Screen -->
+                <div class="rt-screen active" id="rt-splash">
+                  <div class="rt-splash-wrap">
+                    <!-- Simple Text Logo representation or clean ASUS text -->
+                    <h1 style="font-family: var(--font-title); font-size: 54px; letter-spacing: 2px; color: var(--primary); margin-bottom: 16px;">ASUS</h1>
+                    <p style="font-size:13px; color: var(--text-secondary); margin-bottom: 32px; letter-spacing: 1px;">WELCOME TO THE EXPERIENCE</p>
+                    <div class="rt-spinner" id="rt-splash-spinner"></div>
+                  </div>
+                  <button class="btn btn-secondary btn-text rt-screen-overlay-btn" id="rt-splash-skip">Skip Intro ›</button>
+                </div>
+                
+                <!-- RT-02: Auto SKU Detection -->
+                <div class="rt-screen" id="rt-sku">
+                  <div class="rt-sku-wrap">
+                    <div class="rt-sku-scanning-card" id="rt-sku-card-content">
+                      <div class="rt-sku-icon-box">💻</div>
+                      <h3 style="font-family: var(--font-title); font-size: 18px; margin-bottom: 8px;">Hardware SKU Scan</h3>
+                      <p style="font-size: 12px; color: var(--text-secondary);">Connecting to local hardware identification registers...</p>
+                      
+                      <div class="rt-sku-scanning-bar"></div>
+                      
+                      <div class="rt-sku-logs" id="rt-sku-logs">Initializing ChromeOS registers...</div>
+                    </div>
+                  </div>
+                  <button class="btn btn-secondary btn-text rt-screen-overlay-btn" id="rt-sku-btn">Skip Scan ›</button>
+                </div>
+                
+                <!-- RT-03: Retail Landing Home -->
+                <div class="rt-screen" id="rt-home">
+                  <div class="rt-home-layout">
+                    <div class="rt-home-hero">
+                      <img src="assets/asus_chromebook_hero.png" alt="ASUS Chromebook Plus">
+                      <div style="position: absolute; bottom: 12px; right: 12px; font-size: 9px; color: var(--text-muted);">Simulated Unit Photo</div>
+                    </div>
+                    <div class="rt-home-details">
+                      <span class="rt-badge" id="rt-home-sku-badge">MODEL: CX3402</span>
+                      <h2 class="rt-home-title">ASUS Chromebook Plus</h2>
+                      <p class="rt-home-desc">
+                        Get more done with fast boot times, built-in AI tools, automatic military-grade durability testing, and robust productivity software.
+                      </p>
+                      <div class="rt-home-buttons">
+                        <button class="btn btn-primary" id="rt-home-ksp-btn">Explore Key Features ›</button>
+                        <div style="display: flex; gap: 8px;">
+                          <button class="btn btn-secondary" style="flex:1;" id="rt-home-specs-btn">Tech Specs</button>
+                          <button class="btn btn-secondary" style="flex:1;" id="rt-home-media-btn">Gallery</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="rt-nav-bar">
+                    <span class="rt-nav-title">ASUS Retail Demo</span>
+                    <div class="rt-nav-dots">
+                      <div class="rt-dot active"></div>
+                      <div class="rt-dot"></div>
+                      <div class="rt-dot"></div>
+                      <div class="rt-dot"></div>
+                    </div>
+                    <div class="rt-nav-buttons">
+                      <button class="btn btn-secondary btn-text" id="rt-home-preview-btn" style="font-size:11px;">Preview screensaver attract</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- RT-04: Key Selling Points Carousel -->
+                <div class="rt-screen" id="rt-ksp">
+                  <div class="rt-ksp-wrap">
+                    <div class="rt-ksp-header">
+                      <h2>Key Selling Points</h2>
+                      <span style="font-size: 13px; color: var(--text-secondary);" id="rt-ksp-num">Highlight 1 of 6</span>
+                    </div>
+                    
+                    <div class="rt-ksp-carousel">
+                      <button class="btn btn-secondary btn-icon" id="rt-ksp-prev" style="width: 40px; height: 40px; border-radius: 50%;">‹</button>
+                      
+                      <div class="rt-ksp-card">
+                        <div class="rt-ksp-icon" id="rt-ksp-icon">🛡️</div>
+                        <div class="rt-ksp-content">
+                          <span class="rt-ksp-card-kicker" id="rt-ksp-kicker">DURABILITY</span>
+                          <h3 class="rt-ksp-card-title" id="rt-ksp-title">Military Grade Durability</h3>
+                          <p class="rt-ksp-card-text" id="rt-ksp-text">
+                            Tested to rigorous US MIL-STD 810H standards to withstand everyday bumps, drops, pressure, and liquid spills on the keyboard.
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <button class="btn btn-secondary btn-icon" id="rt-ksp-next" style="width: 40px; height: 40px; border-radius: 50%;">›</button>
+                    </div>
+                    
+                    <div style="display:flex; justify-content:center; margin: 16px 0;" id="rt-ksp-dots">
+                      <!-- Dynamic dots generated by JS -->
+                    </div>
+                  </div>
+                  
+                  <div class="rt-nav-bar">
+                    <button class="btn btn-secondary" id="rt-ksp-home">‹ Home</button>
+                    <div class="rt-nav-dots">
+                      <div class="rt-dot"></div>
+                      <div class="rt-dot active"></div>
+                      <div class="rt-dot"></div>
+                      <div class="rt-dot"></div>
+                    </div>
+                    <button class="btn btn-primary" onclick="showRtScreen('rt-specs')">Tech Specs ›</button>
+                  </div>
+                </div>
+                
+                <!-- RT-05: Technical Specifications -->
+                <div class="rt-screen" id="rt-specs">
+                  <div class="rt-specs-wrap">
+                    <h2 style="font-family: var(--font-title); font-size: 22px;">Technical Specifications</h2>
+                    
+                    <div class="rt-specs-grid">
+                      <div class="rt-spec-section">
+                        <h3>Performance & Architecture</h3>
+                        <div class="rt-spec-row">
+                          <span class="rt-spec-label">Processor</span>
+                          <span class="rt-spec-value">12th Gen Intel Core i5-1235U</span>
+                        </div>
+                        <div class="rt-spec-row">
+                          <span class="rt-spec-label">Graphics</span>
+                          <span class="rt-spec-value">Intel Iris Xe Graphics</span>
+                        </div>
+                        <div class="rt-spec-row">
+                          <span class="rt-spec-label">OS</span>
+                          <span class="rt-spec-value">ChromeOS Plus</span>
+                        </div>
+                      </div>
+                      
+                      <div class="rt-spec-section">
+                        <h3>Memory & Storage</h3>
+                        <div class="rt-spec-row">
+                          <span class="rt-spec-label">System RAM</span>
+                          <span class="rt-spec-value">8GB LPDDR5 (Onboard)</span>
+                        </div>
+                        <div class="rt-spec-row">
+                          <span class="rt-spec-label">Solid State</span>
+                          <span class="rt-spec-value">256GB UFS Storage</span>
+                        </div>
+                        <div class="rt-spec-row">
+                          <span class="rt-spec-label">Cloud Storage</span>
+                          <span class="rt-spec-value">12-Month 100GB Google One</span>
+                        </div>
+                      </div>
+                      
+                      <div class="rt-spec-section">
+                        <h3>Display & Audio</h3>
+                        <div class="rt-spec-row">
+                          <span class="rt-spec-label">Screen Size</span>
+                          <span class="rt-spec-value">14.0-inch, FHD (1920x1080)</span>
+                        </div>
+                        <div class="rt-spec-row">
+                          <span class="rt-spec-label">Touch Screen</span>
+                          <span class="rt-spec-value">Capacitive Multi-touch</span>
+                        </div>
+                        <div class="rt-spec-row">
+                          <span class="rt-spec-label">Speaker System</span>
+                          <span class="rt-spec-value">Dual Harmon Kardon stereo</span>
+                        </div>
+                      </div>
+                      
+                      <div class="rt-spec-section">
+                        <h3>Dimensions & Ports</h3>
+                        <div class="rt-spec-row">
+                          <span class="rt-spec-label">Physical weight</span>
+                          <span class="rt-spec-value">1.44 kg (3.17 lbs)</span>
+                        </div>
+                        <div class="rt-spec-row">
+                          <span class="rt-spec-label">Chassis Dimensions</span>
+                          <span class="rt-spec-value">32.6 x 21.4 x 1.87 cm</span>
+                        </div>
+                        <div class="rt-spec-row">
+                          <span class="rt-spec-label">I/O Ports</span>
+                          <span class="rt-spec-value">2x USB-C 3.2, 1x USB-A, 1x HDMI</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="rt-nav-bar">
+                    <button class="btn btn-secondary" id="rt-specs-back">‹ Highlights</button>
+                    <div class="rt-nav-dots">
+                      <div class="rt-dot"></div>
+                      <div class="rt-dot"></div>
+                      <div class="rt-dot active"></div>
+                      <div class="rt-dot"></div>
+                    </div>
+                    <button class="btn btn-primary" id="rt-specs-next">Media Gallery ›</button>
+                  </div>
+                </div>
+                
+                <!-- RT-06: Media Gallery -->
+                <div class="rt-screen" id="rt-media">
+                  <div class="rt-media-wrap">
+                    
+                    <div class="rt-media-viewer" id="rt-media-viewer">
+                      <!-- Rendered by JS -->
+                    </div>
+                    
+                    <div class="rt-media-sidebar" id="rt-media-thumbs">
+                      <!-- Thumbnails rendered by JS -->
+                    </div>
+                  </div>
+                  
+                  <div class="rt-nav-bar">
+                    <button class="btn btn-secondary" id="rt-media-back">‹ Specs</button>
+                    <div class="rt-nav-dots">
+                      <div class="rt-dot"></div>
+                      <div class="rt-dot"></div>
+                      <div class="rt-dot"></div>
+                      <div class="rt-dot active"></div>
+                    </div>
+                    <button class="btn btn-primary" id="rt-media-next">Attract Screensaver ›</button>
+                  </div>
+                </div>
+                
+                <!-- RT-07: Idle Attract Mode -->
+                <div class="rt-screen" id="rt-idle">
+                  <div class="rt-idle-wrap" id="rt-idle-wake">
+                    <img class="rt-idle-image" id="rt-idle-img" src="assets/asus_attract_loop.png" alt="ASUS Attract Loop">
+                    
+                    <div class="rt-idle-text-overlay">
+                      <h2 class="rt-idle-title" id="rt-idle-title">ASUS Chromebook Plus</h2>
+                      <p class="rt-idle-desc" id="rt-idle-desc">Interactive product tour. Tap the screen to explore.</p>
+                      <div class="rt-idle-prompt">👋 TAP ANYWHERE TO START TOUR</div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            
+          </div>
+        </section>
+        
+        <!-- ==========================================
+             04 CMS ADMIN PORTAL (DESKTOP SIMULATOR)
+             ========================================== -->
+        <section class="workbench-page" id="page-cms">
+          
+          <div class="browser-frame">
+            <div class="browser-header">
+              <div class="browser-dots">
+                <span class="browser-dot browser-dot-red"></span>
+                <span class="browser-dot browser-dot-yellow"></span>
+                <span class="browser-dot browser-dot-green"></span>
+              </div>
+              <div class="browser-url-bar">
+                🔐 cms.asus-retaildemo.internal/console
+              </div>
+            </div>
+            
+            <!-- CMS Main App Shell -->
+            <div class="cms-layout">
+              
+              <!-- CMS Sidebar -->
+              <aside class="cms-sidebar">
+                <div class="cms-brand">
+                  💻 ASUS CMS Portal
+                </div>
+                
+                <nav class="cms-nav">
+                  <a href="#" class="cms-nav-item active" data-cms-page="dash">Dashboard</a>
+                  <a href="#" class="cms-nav-item" data-cms-page="upload">Upload Content</a>
+                  <a href="#" class="cms-nav-item" data-cms-page="assign">Assign Content</a>
+                  <a href="#" class="cms-nav-item" data-cms-page="schedule">Scheduling</a>
+                  <a href="#" class="cms-nav-item" data-cms-page="reports">Reports Sync</a>
+                </nav>
+                
+                <!-- CMS Admin Profile widget -->
+                <div class="cms-user-panel" id="cms-user-panel-box" style="display:none;">
+                  <div class="cms-username" id="cms-username-label">Vanshika Soni</div>
+                  <div class="cms-userrole" id="cms-user-role-label">Super Admin</div>
+                  <button class="btn btn-secondary btn-text" id="cms-sign-out" style="padding: 4px; font-size: 11px; text-align: left;">Sign Out</button>
+                </div>
+              </aside>
+              
+              <!-- CMS Main Contents -->
+              <div class="cms-main">
+                
+                <!-- CMS-01: LOGIN -->
+                <div class="cms-screen active" id="cms-login">
+                  <div class="cms-login-page">
+                    <div class="cms-login-card">
+                      <div class="cms-login-logo">
+                        <h2 style="font-family: var(--font-title); color: var(--primary);">ASUS Portal Login</h2>
+                        <p style="font-size: 11px; color: var(--text-secondary); margin-top: 4px;">Retail Signage & Distribution Management</p>
+                      </div>
+                      
+                      <div class="input-field">
+                        <label class="input-label">Admin Email</label>
+                        <input type="text" class="input-control" value="admin@asus.example" readonly>
+                      </div>
+                      
+                      <div class="input-field">
+                        <label class="input-label">Password</label>
+                        <input type="password" class="input-control" value="••••••••" readonly>
+                      </div>
+                      
+                      <div class="input-field">
+                        <label class="input-label">Select Security Role</label>
+                        <div class="chips-container" id="cms-role-chips">
+                          <div class="chip active" data-role="Super Admin">Super Admin</div>
+                          <div class="chip" data-role="Regional Admin">Regional Admin (South)</div>
+                        </div>
+                        <span style="font-size:10px; color: var(--text-muted); margin-top: 6px;" id="cms-role-note">Super Admin has access to national filters & all regional stores.</span>
+                      </div>
+                      
+                      <button class="btn btn-primary" id="cms-login-submit" style="width: 100%; margin-top: 8px;">Sign In to Console</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- CMS-02: DASHBOARD OVERVIEW -->
+                <div class="cms-screen" id="cms-dash">
+                  <div class="cms-header-bar">
+                    <span class="cms-header-title">Ecosystem Overview</span>
+                    <span style="font-size: 11px; color: var(--text-secondary);">Last updated: Just now</span>
+                  </div>
+                  
+                  <div class="cms-body">
+                    <!-- Metrics Row -->
+                    <div class="cms-dash-metrics">
+                      <div class="cms-metric-card">
+                        <span class="cms-metric-label">Devices Connected</span>
+                        <div class="cms-metric-value" id="cms-metric-devices">1,156<span style="font-size:11px; font-weight:normal; color:var(--text-muted);">/1,248</span></div>
+                        <span class="cms-metric-trend cms-metric-trend-up">92.6% Online</span>
+                      </div>
+                      
+                      <div class="cms-metric-card">
+                        <span class="cms-metric-label">Products Active</span>
+                        <div class="cms-metric-value" id="cms-metric-products">3 Active</div>
+                        <span class="cms-metric-trend" style="color: var(--text-muted);">Models: CX, CM, B</span>
+                      </div>
+                      
+                      <div class="cms-metric-card">
+                        <span class="cms-metric-label">Media Assets</span>
+                        <div class="cms-metric-value" id="cms-metric-uploads">3</div>
+                        <span class="cms-metric-trend cms-metric-trend-up">Synced Catalog</span>
+                      </div>
+                      
+                      <div class="cms-metric-card">
+                        <span class="cms-metric-label">Distribution Rules</span>
+                        <div class="cms-metric-value" id="cms-metric-assignments">2</div>
+                        <span class="cms-metric-trend cms-metric-trend-up">Active Schedules</span>
+                      </div>
+                    </div>
+                    
+                    <!-- Dashboard widgets layout -->
+                    <div class="cms-dash-row">
+                      
+                      <!-- Left widget: map and listings -->
+                      <div style="display:flex; flex-direction:column; gap:16px;">
+                        
+                        <div class="cms-panel">
+                          <div class="cms-panel-title">
+                            <span>Interactive Geographic Store Distribution</span>
+                            <span style="font-size: 11px; font-weight:normal; color:var(--text-muted);">Hover nodes to inspect status</span>
+                          </div>
+                          
+                          <div class="map-placeholder">
+                            <!-- Draw simple visual lines mimicking US Map regions -->
+                            <svg width="100%" height="100%" style="opacity: 0.2; pointer-events: none;">
+                              <path d="M 20 80 Q 200 40 400 80 T 800 80 T 900 200 L 900 240 Q 600 280 300 240 Z" fill="none" stroke="var(--text-primary)" stroke-width="2"/>
+                            </svg>
+                            
+                            <!-- Interative Store Nodes -->
+                            <div class="map-node" style="left: 15%; top: 30%;" data-store="ASUS Store Seattle" data-region="West" data-status="online"></div>
+                            <div class="map-node" style="left: 18%; top: 55%;" data-store="Best Buy San Francisco" data-region="West" data-status="online"></div>
+                            <div class="map-node offline" style="left: 45%; top: 75%;" data-store="Walmart Dallas" data-region="South" data-status="offline"></div>
+                            <div class="map-node" style="left: 78%; top: 25%;" data-store="ASUS Store Manhattan" data-region="North" data-status="online"></div>
+                            <div class="map-node" style="left: 74%; top: 60%;" data-store="Best Buy Miami" data-region="South" data-status="online"></div>
+                            
+                            <div class="map-tooltip" id="map-tooltip">Seattle Outlet</div>
+                          </div>
+                        </div>
+                        
+                        <div class="cms-panel">
+                          <div class="cms-panel-title">Recent Content Uploads</div>
+                          <div class="table-container">
+                            <table class="data-table">
+                              <thead>
+                                <tr>
+                                  <th>Asset Title</th>
+                                  <th>Type</th>
+                                  <th>Target SKU</th>
+                                  <th>Upload Date</th>
+                                </tr>
+                              </thead>
+                              <tbody id="cms-dash-recent-uploads">
+                                <!-- Populated dynamically by JS -->
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        
+                      </div>
+                      
+                      <!-- Right widget: Sync Activity Log -->
+                      <div class="cms-panel">
+                        <div class="cms-panel-title">Live Device Distribution logs</div>
+                        <div class="table-container" style="border:none;">
+                          <table class="data-table">
+                            <thead>
+                              <tr>
+                                  <th>Content Distribution</th>
+                                  <th>State</th>
+                                  <th>Stores Scope</th>
+                                  <th>Sync Time</th>
+                              </tr>
+                            </thead>
+                            <tbody id="cms-dash-recent-syncs">
+                              <!-- Dynamic sync entries -->
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- CMS-03: CONTENT UPLOAD -->
+                <div class="cms-screen" id="cms-upload">
+                  <div class="cms-header-bar">
+                    <span class="cms-header-title">Upload Asset Catalog</span>
+                  </div>
+                  <div class="cms-body">
+                    
+                    <div class="upload-grid">
+                      <!-- Left side form -->
+                      <div class="cms-panel">
+                        <div class="cms-panel-title">Metadata Registry</div>
+                        <form id="cms-upload-form">
+                          <div class="input-field">
+                            <label class="input-label">Asset Display Title</label>
+                            <input type="text" class="input-control" id="cms-upload-title" placeholder="e.g. Chromebook CX3402 Promo Banner">
+                          </div>
+                          
+                          <div class="input-field">
+                            <label class="input-label">Description</label>
+                            <textarea class="input-control" id="cms-upload-desc" rows="2" placeholder="e.g. Displays winter sales promotional graphics on main dashboard..."></textarea>
+                          </div>
+                          
+                          <div style="display:flex; gap:16px;">
+                            <div class="input-field" style="flex:1;">
+                              <label class="input-label">Asset Type</label>
+                              <select class="input-control input-select" id="cms-upload-type">
+                                <option value="image">Image (JPEG/PNG)</option>
+                                <option value="video">Video (MP4 Loop)</option>
+                              </select>
+                            </div>
+                            
+                            <div class="input-field" style="flex:1;">
+                              <label class="input-label">Target Model SKU</label>
+                              <select class="input-control input-select" id="cms-upload-sku">
+                                <option value="CX3402">CX3402 (Chromebook Plus)</option>
+                                <option value="CX5500">CX5500 (Vibe Chromebook)</option>
+                                <option value="B5402">B5402 (ExpertBook)</option>
+                                <option value="All SKUs">All Models (National Attract)</option>
+                              </select>
+                            </div>
+                          </div>
+                          
+                          <div class="input-field">
+                            <label class="input-label">Asset Tag Filters (Comma separated)</label>
+                            <input type="text" class="input-control" id="cms-upload-tags" placeholder="e.g. Hero, Attract, Promo">
+                          </div>
+                          
+                          <button class="btn btn-primary" id="cms-upload-submit" style="margin-top: 12px; width: 100%;">Publish to Catalog</button>
+                        </form>
+                      </div>
+                      
+                      <!-- Right side drag drop boxes -->
+                      <div>
+                        <div class="cms-panel" style="margin-bottom: 16px;">
+                          <div class="cms-panel-title">Upload Zones</div>
+                          <div class="upload-drag-zone" id="cms-drag-zone-img">
+                            <div class="upload-icon">🖼️</div>
+                            <strong>Drag Image files here</strong>
+                            <p style="font-size:11px; color:var(--text-muted); margin-top:4px;">Or click to mock upload PNG/JPG (Max 5MB)</p>
+                          </div>
+                          
+                          <div class="upload-drag-zone" id="cms-drag-zone-vid">
+                            <div class="upload-icon">🎥</div>
+                            <strong>Drag Video loops here</strong>
+                            <p style="font-size:11px; color:var(--text-muted); margin-top:4px;">Or click to mock upload MP4 (Max 45MB)</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Previews Row -->
+                    <div class="cms-panel" style="margin-top: 16px;">
+                      <div class="cms-panel-title">Current Media Inventory</div>
+                      <div class="table-container">
+                        <table class="data-table">
+                          <thead>
+                            <tr>
+                              <th>Asset Title</th>
+                              <th>Type</th>
+                              <th>Default SKU Target</th>
+                              <th>Tags</th>
+                              <th>Upload Date</th>
+                              <th>Action</th>
+                            </tr>
+                          </thead>
+                          <tbody id="cms-upload-asset-list">
+                            <!-- Populated dynamically -->
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                
+                <!-- CMS-04: CONTENT ASSIGNMENT -->
+                <div class="cms-screen" id="cms-assign">
+                  <div class="cms-header-bar">
+                    <span class="cms-header-title">Distribute Content to Stores</span>
+                  </div>
+                  <div class="cms-body">
+                    
+                    <div class="assign-grid">
+                      <!-- Filters Box -->
+                      <div class="cms-panel">
+                        <div class="cms-panel-title">Target Filters Setup</div>
+                        
+                        <div class="input-field">
+                          <label class="input-label">Select Uploaded Media Asset</label>
+                          <select class="input-control input-select" id="cms-assign-asset-select">
+                            <!-- Dynamic assets option list -->
+                          </select>
+                        </div>
+                        
+                        <div class="input-field">
+                          <label class="input-label">Target Model SKU</label>
+                          <div class="chips-container" id="cms-assign-sku-chips">
+                            <div class="chip active" data-sku="CX3402">CX3402</div>
+                            <div class="chip" data-sku="CX5500">CX5500</div>
+                            <div class="chip" data-sku="B5402">B5402</div>
+                          </div>
+                        </div>
+                        
+                        <div class="input-field">
+                          <label class="input-label">Geographic Region Targets</label>
+                          <div class="chips-container" id="cms-assign-region-chips">
+                            <div class="chip" data-region="North">North Region</div>
+                            <div class="chip" data-region="West">West Region</div>
+                            <div class="chip" data-region="South">South Region</div>
+                            <div class="chip" data-region="East">East Region</div>
+                          </div>
+                        </div>
+                        
+                        <div class="input-field">
+                          <label class="input-label">Retail Partner Filter</label>
+                          <div class="chips-container" id="cms-assign-store-chips">
+                            <div class="chip" data-store="ASUS Outlets">ASUS Store</div>
+                            <div class="chip" data-store="Best Buy">Best Buy</div>
+                            <div class="chip" data-store="Costco">Costco</div>
+                            <div class="chip" data-store="Walmart">Walmart</div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- Summary Box -->
+                      <div class="cms-panel" style="display:flex; flex-direction:column; justify-content:space-between;">
+                        <div>
+                          <div class="cms-panel-title">Distribution Overview</div>
+                          <div class="alert-box alert-info">
+                            <strong>Sync Estimator:</strong> Rules apply recursively. Target count displays active hardware sync registrations.
+                          </div>
+                          
+                          <div class="assign-summary-box">
+                            <div class="assign-summary-title">Configured Assignment Target</div>
+                            <p style="font-size:12px; line-height: 1.5; color: var(--text-primary);" id="cms-assign-summary-desc">
+                              Loading specifications...
+                            </p>
+                          </div>
+                        </div>
+                        
+                        <div style="margin-top:20px; border-top: 1px solid var(--border); padding-top:20px;">
+                          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+                            <span style="font-size: 13px; color: var(--text-secondary);">Estimated device impact:</span>
+                            <strong style="font-size:16px; color: var(--primary);" id="cms-assign-device-count">1,248 devices</strong>
+                          </div>
+                          <button class="btn btn-primary" id="cms-assign-submit" style="width: 100%;">Save and Dispatch Rules</button>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                
+                <!-- CMS-05: SCHEDULING -->
+                <div class="cms-screen" id="cms-schedule">
+                  <div class="cms-header-bar">
+                    <span class="cms-header-title">Content Sync Scheduling</span>
+                  </div>
+                  <div class="cms-body">
+                    
+                    <div class="sched-grid">
+                      <!-- Config Form -->
+                      <div class="cms-panel">
+                        <div class="cms-panel-title">Schedule Timelines</div>
+                        <form id="cms-sched-form">
+                          <div class="input-field">
+                            <label class="input-label">Select Media Asset</label>
+                            <select class="input-control input-select" id="cms-sched-asset-select">
+                              <!-- Populated by JS -->
+                            </select>
+                          </div>
+                          
+                          <div style="display:flex; gap:16px;">
+                            <div class="input-field" style="flex:1;">
+                              <label class="input-label">Start Sync Date</label>
+                              <input type="date" class="input-control" id="cms-sched-start" value="2026-07-14">
+                            </div>
+                            <div class="input-field" style="flex:1;">
+                              <label class="input-label">Expiration Date</label>
+                              <input type="date" class="input-control" id="cms-sched-end" value="2026-08-14">
+                            </div>
+                          </div>
+                          
+                          <div class="input-field">
+                            <label class="input-label">Recurrence Setting</label>
+                            <div style="display:flex; gap:10px; margin-top:4px;">
+                              <label style="font-size:12px; display:inline-flex; align-items:center; gap:6px;">
+                                <input type="checkbox" checked> Repeat Weekly
+                              </label>
+                              <label style="font-size:12px; display:inline-flex; align-items:center; gap:6px;">
+                                <input type="checkbox"> Run during stores closing hours (10PM - 6AM)
+                              </label>
+                            </div>
+                          </div>
+                          
+                          <button class="btn btn-primary" id="cms-sched-submit" style="width: 100%; margin-top:12px;">Publish Timeline Schedule</button>
+                        </form>
+                      </div>
+                      
+                      <!-- Calendar and Active List -->
+                      <div class="cms-panel">
+                        <div class="cms-panel-title">Active Schedule Timelines</div>
+                        <div class="table-container" style="border:none;">
+                          <table class="data-table">
+                            <thead>
+                              <tr>
+                                <th>Campaign Name</th>
+                                <th>SKU</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Status</th>
+                                <th>Cancel</th>
+                              </tr>
+                            </thead>
+                            <tbody id="cms-sched-active-schedules">
+                              <!-- Dynamic scheduling rows -->
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                
+                <!-- CMS-06: REPORTS -->
+                <div class="cms-screen" id="cms-reports">
+                  <div class="cms-header-bar">
+                    <span class="cms-header-title">Live Hardware Audit Logs</span>
+                    <div style="display:flex; gap:8px;">
+                      <button class="btn btn-secondary" id="btn-export-csv" style="font-size:11px; padding: 4px 8px;">📊 Export CSV</button>
+                      <button class="btn btn-secondary" id="btn-export-excel" style="font-size:11px; padding: 4px 8px;">📈 Export Excel</button>
+                      <button class="btn btn-secondary" id="btn-export-pdf" style="font-size:11px; padding: 4px 8px;">📋 Export PDF</button>
+                    </div>
+                  </div>
+                  <div class="cms-body">
+                    
+                    <div class="cms-panel" style="margin-bottom: 16px;">
+                      <div class="cms-panel-title">Synchronized Device Audits (Realtime status syncs)</div>
+                      
+                      <div class="table-container">
+                        <table class="data-table">
+                          <thead>
+                            <tr>
+                              <th>Unit Serial ID</th>
+                              <th>Hardware SKU</th>
+                              <th>Assigned Store Location</th>
+                              <th>Region</th>
+                              <th>CPU Usage</th>
+                              <th>RAM Allocation</th>
+                              <th>Sync State</th>
+                              <th>Last Communication</th>
+                            </tr>
+                          </thead>
+                          <tbody id="cms-reports-device-list">
+                            <!-- Dynamic device records -->
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            
+          </div>
+        </section>
+        
+        <!-- ==========================================
+             05 PROTOTYPE FLOW DIAGRAM
+             ========================================== -->
+        <section class="workbench-page" id="page-flow">
+          <div class="alert-box alert-info">
+            <strong>Interactive Blueprint Map:</strong> Click any of the boxes in the diagram below to jump straight to that prototype view or screen state!
+          </div>
+          
+          <div class="flow-diagram-container">
+            <svg class="flow-interactive-svg" viewBox="0 0 1000 420" width="100%" height="420" xmlns="http://www.w3.org/2000/svg">
+              <!-- Definition of arrows -->
+              <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--text-secondary)"/>
+                </marker>
+                <marker id="arrow-blue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--primary)"/>
+                </marker>
+              </defs>
+              
+              <!-- SECTION HEADINGS -->
+              <text x="180" y="30" font-family="var(--font-title)" font-size="16" font-weight="700" fill="var(--primary)" text-anchor="middle">📱 RETAIL DEMO FLOW</text>
+              <text x="680" y="30" font-family="var(--font-title)" font-size="16" font-weight="700" fill="var(--primary)" text-anchor="middle">💻 CMS ADMIN PORTAL FLOW</text>
+              
+              <!-- ==================== RETAIL DEMO APP FLOW NODES ==================== -->
+              <!-- RT-01: Splash -->
+              <g class="flow-svg-node" data-target-flow="rt-splash">
+                <rect x="50" y="60" width="260" height="40" rx="8"/>
+                <text x="180" y="85" text-anchor="middle">RT-01 · Splash Screen (Logo Intro)</text>
+              </g>
+              <path d="M 180 100 L 180 120" class="flow-svg-edge" marker-end="url(#arrow)"/>
+              
+              <!-- RT-02: SKU Scan -->
+              <g class="flow-svg-node" data-target-flow="rt-sku">
+                <rect x="50" y="120" width="260" height="40" rx="8"/>
+                <text x="180" y="145" text-anchor="middle">RT-02 · Auto SKU Detection (Scan)</text>
+              </g>
+              <path d="M 180 160 L 180 180" class="flow-svg-edge" marker-end="url(#arrow)"/>
+              
+              <!-- RT-03: Home -->
+              <g class="flow-svg-node" data-target-flow="rt-home">
+                <rect x="50" y="180" width="260" height="40" rx="8"/>
+                <text x="180" y="205" text-anchor="middle">RT-03 · Landing Home (Product Hero)</text>
+              </g>
+              <!-- Branch splits from home -->
+              <path d="M 180 220 L 180 240" class="flow-svg-edge" marker-end="url(#arrow)"/>
+              
+              <!-- RT-04: KSP -->
+              <g class="flow-svg-node" data-target-flow="rt-ksp">
+                <rect x="50" y="240" width="260" height="40" rx="8"/>
+                <text x="180" y="265" text-anchor="middle">RT-04 · Selling Points Carousel</text>
+              </g>
+              <path d="M 180 280 L 180 300" class="flow-svg-edge" marker-end="url(#arrow)"/>
+              
+              <!-- RT-05: Specs -->
+              <g class="flow-svg-node" data-target-flow="rt-specs">
+                <rect x="50" y="300" width="260" height="40" rx="8"/>
+                <text x="180" y="325" text-anchor="middle">RT-05 · Technical Specifications</text>
+              </g>
+              <path d="M 180 340 L 180 360" class="flow-svg-edge" marker-end="url(#arrow)"/>
+              
+              <!-- RT-06: Media -->
+              <g class="flow-svg-node" data-target-flow="rt-media">
+                <rect x="50" y="360" width="260" height="40" rx="8"/>
+                <text x="180" y="385" text-anchor="middle">RT-06 · Media Gallery (Video & Images)</text>
+              </g>
+              
+              <!-- RT-07: Idle screensaver loop -->
+              <g class="flow-svg-node" data-target-flow="rt-idle">
+                <rect x="330" y="180" width="130" height="40" rx="8" style="stroke: #FF8F00; fill: #FFF8E1;"/>
+                <text x="395" y="205" text-anchor="middle" font-weight="600" fill="#B26A00">RT-07 · Idle Tour</text>
+              </g>
+              
+              <path d="M 310 200 L 325 200" class="flow-svg-edge" marker-end="url(#arrow)"/>
+              <path d="M 395 180 L 395 140 Q 395 100 240 100" fill="none" stroke="var(--text-secondary)" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arrow)"/>
+              
+              <!-- ==================== CMS PORTAL FLOW NODES ==================== -->
+              <!-- CMS-01: Login -->
+              <g class="flow-svg-node" data-target-flow="cms-login">
+                <rect x="550" y="60" width="260" height="40" rx="8"/>
+                <text x="680" y="85" text-anchor="middle">CMS-01 · Admin Authentication (Login)</text>
+              </g>
+              <path d="M 680 100 L 680 120" class="flow-svg-edge" marker-end="url(#arrow)"/>
+              
+              <!-- CMS-02: Dashboard -->
+              <g class="flow-svg-node" data-target-flow="cms-dash">
+                <rect x="550" y="120" width="260" height="40" rx="8"/>
+                <text x="680" y="145" text-anchor="middle">CMS-02 · Hub Dashboard (Overview)</text>
+              </g>
+              <!-- Branching from dashboard -->
+              <path d="M 680 160 L 680 180" class="flow-svg-edge" marker-end="url(#arrow)"/>
+              
+              <!-- CMS-03: Upload -->
+              <g class="flow-svg-node" data-target-flow="cms-upload">
+                <rect x="550" y="180" width="260" height="40" rx="8"/>
+                <text x="680" y="205" text-anchor="middle">CMS-03 · Content Inventory Uploader</text>
+              </g>
+              <path d="M 680 220 L 680 240" class="flow-svg-edge" marker-end="url(#arrow)"/>
+              
+              <!-- CMS-04: Assign -->
+              <g class="flow-svg-node" data-target-flow="cms-assign">
+                <rect x="550" y="240" width="260" height="40" rx="8"/>
+                <text x="680" y="265" text-anchor="middle">CMS-04 · Store Target Assignments</text>
+              </g>
+              <path d="M 680 280 L 680 300" class="flow-svg-edge" marker-end="url(#arrow)"/>
+              
+              <!-- CMS-05: Scheduling -->
+              <g class="flow-svg-node" data-target-flow="cms-schedule">
+                <rect x="550" y="300" width="260" height="40" rx="8"/>
+                <text x="680" y="325" text-anchor="middle">CMS-05 · Timelines / Expiry Schedule</text>
+              </g>
+              <path d="M 680 340 L 680 360" class="flow-svg-edge" marker-end="url(#arrow)"/>
+              
+              <!-- CMS-06: Reports -->
+              <g class="flow-svg-node" data-target-flow="cms-reports">
+                <rect x="550" y="360" width="260" height="40" rx="8"/>
+                <text x="680" y="385" text-anchor="middle">CMS-06 · Audit Sync Logs & Exports</text>
+              </g>
+              
+              <!-- CROSS-ECOSYSTEM DATA SYNC LINKS -->
+              <path d="M 550 260 L 320 260" fill="none" stroke="var(--primary)" stroke-dasharray="3 3" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+              <text x="435" y="250" font-family="var(--font-sans)" font-size="10" fill="var(--primary)" text-anchor="middle" font-weight="600">Assigns Content</text>
+              
+              <path d="M 310 380 Q 450 410 550 380" fill="none" stroke="var(--primary)" stroke-dasharray="3 3" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+              <text x="435" y="405" font-family="var(--font-sans)" font-size="10" fill="var(--primary)" text-anchor="middle" font-weight="600">Audit logs status</text>
+              
+            </svg>
+          </div>
+        </section>
+        
+        <!-- ==========================================
+             06 COMPONENTS SANDBOX
+             ========================================== -->
+        <section class="workbench-page" id="page-sandbox">
+          <div class="sandbox-grid">
+            <div class="sandbox-section">
+              <div class="sandbox-title">Material Action Buttons</div>
+              <div class="sandbox-row">
+                <button class="btn btn-primary">Primary Solid</button>
+                <button class="btn btn-secondary">Secondary Outlined</button>
+                <button class="btn btn-secondary btn-text">Text Link</button>
+              </div>
+              <div class="sandbox-row">
+                <button class="btn btn-danger">Danger Action</button>
+                <button class="btn btn-primary btn-icon">🛡️</button>
+                <button class="btn btn-secondary" disabled>Disabled State</button>
+              </div>
+            </div>
+            
+            <div class="sandbox-section">
+              <div class="sandbox-title">Material Dynamic Chips</div>
+              <div class="sandbox-row">
+                <span class="chip active">Selected Chip</span>
+                <span class="chip">Default Chip</span>
+                <span class="chip-status chip-status-online">Sync State Active</span>
+                <span class="chip-status chip-status-offline">Offline Node</span>
+              </div>
+            </div>
+            
+            <div class="sandbox-section" style="grid-column: span 2;">
+              <div class="sandbox-title">Forms & Input Controls</div>
+              <div style="display:flex; gap:16px;">
+                <div class="input-field" style="flex:1;">
+                  <label class="input-label">Simple Input Box</label>
+                  <input type="text" class="input-control" placeholder="Type alphanumeric value...">
+                </div>
+                <div class="input-field" style="flex:1;">
+                  <label class="input-label">Select Dropdown</label>
+                  <select class="input-control input-select">
+                    <option>Option 1 - ASUS CX34</option>
+                    <option>Option 2 - ASUS CM30</option>
+                  </select>
+                </div>
+                <div class="input-field" style="flex:1;">
+                  <label class="input-label">Calendar Datepicker</label>
+                  <input type="date" class="input-control" value="2026-07-14">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- ==========================================
+             07 ASSETS CATALOG
+             ========================================== -->
+        <section class="workbench-page" id="page-assets">
+          <div class="assets-grid">
+            <div class="asset-card">
+              <div class="asset-preview-box">
+                <img src="assets/asus_chromebook_hero.png" alt="ASUS Chromebook Plus">
+              </div>
+              <div class="asset-details-box">
+                <span class="asset-name">asus_chromebook_hero.png</span>
+                <span class="asset-meta">Image file  ·  PNG Format  ·  Studio display</span>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="asset-preview-box">
+                <img src="assets/asus_attract_loop.png" alt="ASUS Attract Loop">
+              </div>
+              <div class="asset-details-box">
+                <span class="asset-name">asus_attract_loop.png</span>
+                <span class="asset-meta">Image file  ·  PNG Format  ·  Campaign screensaver</span>
+              </div>
+            </div>
+            
+            <div class="asset-card">
+              <div class="asset-preview-box" style="font-size:42px;">
+                🎨
+              </div>
+              <div class="asset-details-box">
+                <span class="asset-name">ASUS Blue Vector Asset</span>
+                <span class="asset-meta">Icon / Brand  ·  SVG Format  ·  RGB vector path</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+      </div>
+      
+    </main>
   </div>
 
-  <div class="landing-wrap">
-    <h1>Prototype walkthrough</h1>
-    <p class="sub">Two connected products. Pick a flow to step through. Every screen is
-      clickable — Back and Next behave like the real application.</p>
-
-    <div class="product-cards">
-      <a class="product-card" href="retail.html">
-        <span class="kicker">Product 1 · Tablet frame</span>
-        <h2>Retail Demo App</h2>
-        <p>In-store experience on ASUS Chromebooks &amp; tablets. Detects the device,
-          then walks a shopper through selling points, specs and media.</p>
-        <div class="frame-note">7 screens · Splash → SKU → Home → KSP → Specs → Media → Idle loop</div>
-      </a>
-
-      <a class="product-card" href="cms.html">
-        <span class="kicker">Product 2 · Desktop frame</span>
-        <h2>CMS Admin Portal</h2>
-        <p>Web portal for ASUS admins to upload content, assign it to devices by
-          region, schedule it, and pull usage reports.</p>
-        <div class="frame-note">6 screens · Login → Dashboard → Upload → Assign → Schedule → Reports</div>
-      </a>
-    </div>
-
-    <div class="meta-note">
-      <strong>Reviewer note:</strong> This is a structure-first wireframe for scope validation,
-      not a visual design. Grey blocks are intentional placeholders for imagery, copy and branding —
-      the goal is to confirm information architecture, screen hierarchy and navigation before build.
-      Use the <em>Flow</em> button inside each prototype to jump between screens.
-    </div>
-  </div>
+  <script src="js/app.js"></script>
 </body>
 </html>
